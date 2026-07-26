@@ -4,321 +4,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kesari - Premium Wheat Products</title>
+    <title>About Us - Kesari</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { primary: '#E9A64B', secondary: '#6B4423' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D6862E',
+                        secondary: '#2B1810',
+                        cream: '#FBF7F1',
+                        creamalt: '#F6ECDD',
+                        tan: '#F1E1C7',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    borderRadius: { 'button': '999px' }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-    <style>
-        :where([class^="ri-"])::before {
-            content: "\f3c2";
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .hero-section {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://readdy.ai/api/search-image?query=wheat%20lifecycle%20collage%20showing%20seeds%2C%20growing%20plants%2C%20golden%20harvest%2C%20and%20flour%2C%20natural%20progression%2C%20no%20people%2C%20soft%20morning%20light%2C%20organic%20process%20visualization%2C%20high%20quality%20professional%20photography&width=1920&height=800&seq=14&orientation=landscape');
-            background-size: cover;
-            background-position: center;
-        }
-
-        input:focus {
-            outline: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="bg-secondary">
+<body>
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="https://static.readdy.ai/image/af55a22033e8b80800e7ff55fb495b36/04bd865b84d440975edf34a59cb6aa73.png"
-                    alt="Kesari Logo" class="h-16">
-            </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-secondary hover:text-primary font-medium transition-colors">Home</a>
-
-                <a href="about-us.html" class="text-primary font-medium border-b-2 border-primary">About Us</a>
-
-                <!-- 
-                <a href="#" class="text-secondary hover:text-primary font-medium transition-colors">Products</a>-->
-                <a href="#contact" class="text-secondary hover:text-primary font-medium transition-colors">Contact</a>
+    <header class="site-header sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="logo-mark">
+                <img src="assets/Logo.png"  
+                    alt="Kesari Logo" class="h-12 blend-illustration">
+            </a>
+            <nav class="hidden md:flex space-x-12">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about-us.html" class="nav-link active">About Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden w-8 h-8 flex items-center justify-center">
-                <i class="ri-menu-line ri-xl text-secondary"></i>
+            <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center">
+                <i class="ri-menu-line ri-2xl text-secondary"></i>
             </button>
             <!-- Mobile menu -->
-            <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
-                <div class="container mx-auto px-4 py-4">
+            <div id="mobile-menu" class="fixed inset-0 bg-cream z-50 hidden">
+                <div class="container mx-auto py-5">
                     <div class="flex justify-end">
-                        <button id="mobile-menu-close" class="w-8 h-8 flex items-center justify-center">
-                            <i class="ri-close-line ri-xl text-secondary"></i>
+                        <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center">
+                            <i class="ri-close-line ri-2xl text-secondary"></i>
                         </button>
                     </div>
-                    <nav class="flex flex-col items-center space-y-6 mt-16">
-                        <a href="index.html" class="text-2xl text-secondary hover:text-primary font-medium transition-colors">Home</a>
-                        <a href="about-us.html" class="text-2xl text-secondary hover:text-primary font-medium transition-colors">About Us</a>
-                       <!-- <a href="#" class="text-2xl text-secondary hover:text-primary font-medium transition-colors">Products</a> --> 
-                        <a href="#contact" class="text-2xl text-secondary hover:text-primary font-medium transition-colors">Contact</a>
+                    <nav class="flex flex-col items-center space-y-8 mt-20">
+                        <a href="index.html" class="text-3xl nav-link">Home</a>
+                        <a href="about-us.html" class="text-3xl nav-link active">About Us</a>
+                        <a href="#contact" class="text-3xl nav-link">Contact</a>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-    
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                                <div class="max-w-5xl mx-auto">
-                                <div class="flex flex-col md:flex-row items-start gap-12">
-                    <!-- Left: Text content (left-aligned) -->
-                    <div class="md:w-1/2 w-full">
-                        <h2 class="text-3xl font-bold text-secondary mb-6 text-left">About us</h2>
-                        <p class="text-gray-700 mb-4 text-left">At Kesari, quality is not just a promise, it's our heritage. We grow and mill our wheat with time-honoured methods to preserve flavor and nutrition. Our small-batch approach ensures every product meets strict standards for purity and taste.</p>
-                        <p class="text-gray-700 mb-6 text-left">We prioritise sustainable farming, careful harvesting, and traditional stone milling so you get a wholesome product that supports both health and the land.</p>
-                    </div>
-                    <!-- Right: Image -->
-                    <div class="md:w-1/2 w-full flex items-start md:justify-end justify-center">
-                        <div class="md:px-0 -mx-4 md:mx-0">
-                            <img src="Resources/wheat_photo.jpg"  
-                                alt="Quality Testing" class="w-full h-[260px] sm:h-[320px] md:h-[360px] lg:h-[420px] rounded-2xl md:shadow-lg object-cover">
-                        </div>
-                    </div>
-                </div>
+
+    <main>
+        <!-- About Hero — image bleeds off the LEFT, text sits on the RIGHT (mirrors index hero, flipped) -->
+        <section class="about-hero-section">
+            <!-- Hero image absolutely positioned, bleeds to left -->
+            <div class="about-hero-media">
+                <img src="assets/sunset-golden-field-grass.jpg" alt="Golden wheat fields at Kesari farm">
+            </div>
+
+            <div class="container mx-auto relative z-10">
+                <div class="about-text-col">
+                    <div class="eyebrow"><span>Our Story</span></div>
+                    <h1 class="font-serif font-bold mb-6" style="line-height:1.12">About Us</h1>
+                    <p class="text-ink-soft mb-8">At Kesari, quality is not just a promise, it's our heritage. We grow and mill our wheat with time honoured methods to preserve flavour and nutrition. Our small-batch approach ensures every product meets strict standards for purity and taste.</p>
+                    <p class="text-ink-soft mb-8">We prioritise sustainable farming, careful harvesting, and traditional stone milling so you get a wholesome product that supports both health and the land.</p>
+                    <a href="#contact" class="btn-orange">Get in Touch <i class="ri-arrow-right-line"></i></a>
                 </div>
             </div>
-    </section>
 
-    <!-- Contact Section (copied from index.html) -->
-    <section id="contact" class="py-16 bg-[#FFF8EF]">
-            <div class="container mx-auto px-4 ">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="flex flex-col md:flex-row gap-12">
-                        <div class="md:w-1/2">
-                            <h2 class="text-3xl font-bold text-secondary mb-6">Get in Touch</h2>
-                            <p class="text-gray-700 mb-8">Have questions about our products or want to learn more about
-                                our traditional milling process? We'd love to hear from you.</p>
-                            <!-- <div class="space-y-6">
-                                <div class="flex items-start">
-                                    <div
-                                        class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                        <div class="w-5 h-5 flex items-center justify-center text-primary">
-                                            <i class="ri-map-pin-line"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-medium text-secondary mb-1">Our Location</h3>
-                                        <p class="text-gray-700"> 59 Hines Hill Road North, Hines Hill </p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div
-                                        class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                        <div class="w-5 h-5 flex items-center justify-center text-primary">
-                                            <i class="ri-phone-line"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-medium text-secondary mb-1">Phone</h3>
-                                        <p class="text-gray-700">+61 430 116 375</p>
-                                    </div>
-                                </div> 
-                                <div class="flex items-start">
-                                    <div
-                                        class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                        <div class="w-5 h-5 flex items-center justify-center text-primary">
-                                            <i class="ri-mail-line"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-medium text-secondary mb-1">Email</h3>
-                                        <p class="text-gray-700">kartafarms@gmail.com</p>
-                                    </div>
-                                </div> -->
-                            </div> 
-                        </div> 
+            <!-- Wave divider at the bottom, same as index hero -->
+            <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,60 C240,110 420,10 720,45 C1020,80 1240,15 1440,55 L1440,100 L0,100 Z" fill="var(--tan)"/>
+            </svg>
+        </section>
 
-                        <div class="md:w-1/2">
-                            <div class="bg-white p-6 rounded-lg shadow-md ">
-                                <h3 class="text-xl font-bold text-secondary mb-4">Send us a Message</h3>
-                                <form
-                                action="https://formspree.io/f/xjknovdw"
-                                method="POST"
-                                >
-
-                                <input type="hidden" name="_redirect" value="false">
-                                
-                                <div class="mb-4">
-                                    <label for="name" class="block text-gray-700 mb-2">Your Name</label>
-                                    <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                                    placeholder="John Doe"
-                                    required
-                                    >
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="email" class="block text-gray-700 mb-2">Email Address</label>
-                                    <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                                    placeholder="john@example.com"
-                                    required
-                                    >
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="subject" class="block text-gray-700 mb-2">Subject</label>
-                                    <input
-                                    type="text"
-                                    id="subject"
-                                    name="subject"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                                    placeholder="Product Inquiry"
-                                    >
-                                </div>
-
-                                <div class="mb-6">
-                                    <label for="message" class="block text-gray-700 mb-2">Your Message</label>
-                                    <textarea
-                                    id="message"
-                                    name="message"
-                                    rows="4"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                                    placeholder="How can we help you?"
-                                    required
-                                    ></textarea>
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors w-full whitespace-nowrap"
-                                >
-                                    Send Message
-                                </button>
-                                </form>
-
-                            </div>
-                        </div> 
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container mx-auto">
+                <div class="grid gap-14 contact-grid" style="grid-template-columns: 0.85fr 1.15fr; align-items: start;">
+                    <div>
+                        <div class="eyebrow"><span>Get in Touch</span><span class="eyebrow-rule"></span></div>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6" style="line-height:1.2">We'd love to hear from you.</h2>
+                        <p class="text-ink-soft text-lg">Have questions about our products or want to learn more about our traditional milling process? Send us a message and we'll get back to you as soon as possible.</p>
+                        
+                        <!-- Contact drawing positioned directly under text with blend mode -->
+                        <img src="assets/contact-drawing.PNG" class="contact-deco-inline blend-illustration" alt="Wheat decoration">
                     </div>
+
+                    <form action="https://formspree.io/f/xjknovdw" method="POST" class="grid gap-5" style="grid-template-columns: 1fr 1fr;">
+                        <input type="hidden" name="_redirect" value="false">
+                        <input type="text" name="name" class="contact-input" placeholder="Your Name" required>
+                        <input type="email" name="email" class="contact-input" placeholder="Email Address" required>
+                        <input type="text" name="subject" class="contact-input" style="grid-column: 1 / -1;" placeholder="Subject">
+                        <textarea name="message" rows="5" class="contact-input" style="grid-column: 1 / -1;" placeholder="Your Message" required></textarea>
+                        <div style="grid-column: 1 / -1;">
+                            <button type="submit" class="btn-orange">Send Message <i class="ri-arrow-right-line"></i></button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-secondary text-white pt-12 pb-6">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer class="site-footer pt-20 pb-0">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14 relative z-10" style="background: var(--footer-bg);">
                 <div>
-                    <img src="https://static.readdy.ai/image/af55a22033e8b80800e7ff55fb495b36/04bd865b84d440975edf34a59cb6aa73.png"
-                        alt="Kesari Logo" class="h-12 mb-4">
-                    <p class="text-gray-300 mb-4">Preserving tradition in every grain since 2020.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/Kartafarm/" class="text-gray-300 hover:text-white transition-colors">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <i class="ri-facebook-fill"></i>
-                            </div>
-                        </a>
-                        <a href="https://www.instagram.com/kartafarms/" class="text-gray-300 hover:text-white transition-colors">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <i class="ri-instagram-line"></i>
-                            </div>
-                        </a>
-                        <!-- <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <i class="ri-twitter-x-line"></i>
-                            </div>
-                        </a> -->
-                    </div>
+                    <a href="index.html" class="inline-block mb-4">
+                        <img src="assets/Logo.png" alt="Kesari Logo" class="footer-logo-img blend-illustration">
+                    </a>
+                    <p class="text-base mt-4 max-w-[240px]">From our farm to your table.<br>Thank you for supporting our journey.</p>
                 </div>
-                <!-- <div>
-                    <h3 class="text-lg font-medium mb-4">Products</h3>
-                    <ul class="space-y-2">
-                        <li><a href="wheat-flour.html" class="text-gray-300 hover:text-white transition-colors">Wheat
-                                Flour</a></li>
-                        <li><a href="daliya.html" class="text-gray-300 hover:text-white transition-colors">Daliya</a>
-                        </li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Nutritional
-                                Information</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Storage Guidelines</a>
-                        </li>
-                    </ul>
-                </div> -->
-                <div class="md:col-start-3 md:text-left">
-                    <h3 class="text-lg font-medium mb-4">Kesari Atta</h3>
-                    <ul class="space-y-2">
-                        <li><a href="about-us.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-                        <!-- <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Our Process</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Sustainability</a></li> -->
-                        <li><a href="#contact" class="text-gray-300  hover:text-white transition-colors">Contact Us</a></li>
+                <div>
+                    <h3 class="mb-5">Quick Links</h3>
+                    <ul class="space-y-3 text-base">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                
-            </div>
-            <div class="border-t border-gray-700 pt-6 mt-6">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm">&copy; 2025 Kesari. All rights reserved.</p>
-                    <div class="flex space-x-4 mt-4 md:mt-0">
-                        <!-- <a class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                        <a class="text-gray-400 hover:text-white text-sm transition-colors">Terms of
-                            Service</a>
-                        <a class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a> -->
-                    </div>
+                <div>
+                    <h3 class="mb-5">Connect</h3>
+                    <ul class="space-y-4 text-base">
+                        <li class="flex items-center gap-3"><i class="ri-facebook-fill text-lg"></i><a href="https://www.facebook.com/Kartafarm/" target="_blank" rel="noopener">/Kartafarm</a></li>
+                        <li class="flex items-center gap-3"><i class="ri-instagram-line text-lg"></i><a href="https://www.instagram.com/kartafarms/" target="_blank" rel="noopener">@kartafarms</a></li>
+                        <li class="flex items-center gap-3"><i class="ri-mail-line text-lg"></i><a href="mailto:kartafarms@gmail.com">kartafarms@gmail.com</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+        <div class="footer-bottom py-5 mt-4">
+            <p class="text-center text-base text-ink-soft">&copy; 2025 Kesari. All rights reserved.</p>
+        </div>
+        <img src="assets/windmill-drawing.PNG" class="footer-windmill blend-illustration" alt="Windmill">
     </footer>
 
     <!-- Scripts -->
-    <script id="faq-accordion">
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqButtons = document.querySelectorAll('[id^="faq-btn-"]');
-            faqButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    const id = this.id.split('-')[2];
-                    const content = document.getElementById(`faq-content-${id}`);
-                    const icon = document.getElementById(`faq-icon-${id}`);
-                    // Toggle content visibility
-                    if (content.classList.contains('hidden')) {
-                        content.classList.remove('hidden');
-                        icon.classList.remove('ri-add-line');
-                        icon.classList.add('ri-subtract-line');
-                    } else {
-                        content.classList.add('hidden');
-                        icon.classList.remove('ri-subtract-line');
-                        icon.classList.add('ri-add-line');
-                    }
-                });
-            });
-        });
-    </script>
     <script id="mobile-menu-toggle">
         document.addEventListener('DOMContentLoaded', function() {
             const menuButton = document.getElementById('mobile-menu-button');
             const closeButton = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
-            
+
             function toggleMenu() {
                 mobileMenu.classList.toggle('hidden');
                 document.body.classList.toggle('overflow-hidden');
             }
-            
+
             menuButton.addEventListener('click', toggleMenu);
             closeButton.addEventListener('click', toggleMenu);
-            
-            // Close menu when clicking a link
+
             const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
             Array.from(mobileMenuLinks).forEach(link => {
                 link.addEventListener('click', toggleMenu);

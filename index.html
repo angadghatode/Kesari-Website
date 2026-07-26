@@ -6,558 +6,310 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kesari - Premium Wheat Products</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-    <script>tailwind.config = { theme: { extend: { colors: { primary: '#E9A64B', secondary: '#6B4423' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D6862E',
+                        secondary: '#2B1810',
+                        cream: '#FBF7F1',
+                        creamalt: '#F6ECDD',
+                        tan: '#F1E1C7',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    borderRadius: { 'button': '999px' }
+                }
+            }
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-    <style>
-        :where([class^="ri-"])::before {
-            content: "\f3c2";
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .hero-section {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://readdy.ai/api/search-image?query=wheat%20lifecycle%20collage%20showing%20seeds%2C%20growing%20plants%2C%20golden%20harvest%2C%20and%20flour%2C%20natural%20progression%2C%20no%20people%2C%20soft%20morning%20light%2C%20organic%20process%20visualization%2C%20high%20quality%20professional%20photography&width=1920&height=800&seq=14&orientation=landscape');
-            background-size: cover;
-            background-position: center;
-        }
-
-        input:focus {
-            outline: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="bg-secondary">
+<body>
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="https://static.readdy.ai/image/af55a22033e8b80800e7ff55fb495b36/04bd865b84d440975edf34a59cb6aa73.png"
-                    alt="Kesari Logo" class="h-16">
-            </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#" class="text-primary font-medium border-b-2 border-primary">Home</a>
-                <a href="about-us.html" class="text-secondary hover:text-primary font-medium transition-colors">About Us</a>
-                <!-- 
-                <a href="#" class="text-secondary hover:text-primary font-medium transition-colors">Products</a>-->
-                <a href="#contact" class="text-secondary hover:text-primary font-medium transition-colors">Contact</a>
+    <header class="site-header sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="logo-mark">
+                <img src="assets/Logo.png" 
+                    alt="Kesari Logo" class="h-12">
+            </a>
+            <nav class="hidden md:flex space-x-12">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="about-us.html" class="nav-link">About Us</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden w-8 h-8 flex items-center justify-center">
-                <i class="ri-menu-line ri-xl text-secondary"></i>
+            <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center">
+                <i class="ri-menu-line ri-2xl text-secondary"></i>
             </button>
 
             <!-- Mobile menu -->
-            <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden">
-                <div class="container mx-auto px-4 py-4">
+            <div id="mobile-menu" class="fixed inset-0 bg-cream z-50 hidden">
+                <div class="container mx-auto py-5">
                     <div class="flex justify-end">
-                        <button id="mobile-menu-close" class="w-8 h-8 flex items-center justify-center">
-                            <i class="ri-close-line ri-xl text-secondary"></i>
+                        <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center">
+                            <i class="ri-close-line ri-2xl text-secondary"></i>
                         </button>
                     </div>
-                    <nav class="flex flex-col items-center space-y-6 mt-16">
-                        <a href="index.html" class="text-2xl text-secondary hover:text-primary font-medium transition-colors">Home</a>
-                        <a href="about-us.html" class="text-2xl text-secondary hover:text-primary font-medium transition-colors">About Us</a>
-                        <!-- <a href="#" class="text-2xl text-secondary hover:text-primary font-medium transition-colors">Products</a> -->
-                        <a href="#contact" class="text-2xl text-secondary hover:text-primary font-medium transition-colors">Contact</a>
+                    <nav class="flex flex-col items-center space-y-8 mt-20">
+                        <a href="index.html" class="text-3xl nav-link active">Home</a>
+                        <a href="about-us.html" class="text-3xl nav-link">About Us</a>
+                        <a href="#contact" class="text-3xl nav-link">Contact</a>
                     </nav>
                 </div>
             </div>
         </div>
     </header>
-    <!-- Main Content -->
+
     <main>
         <!-- Hero Section -->
-        <section class="hero-section py-20">
-            <div class="container mx-auto px-4">
-                <div class="max-w-3xl mx-auto text-center">
-                    <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-6">From Our Farm to Your Table</h1>
-                    <p class="text-lg text-gray-700 mb-8">At Kesari, we control every step - from planting the seed to
-                        milling the flour. Experience the difference of truly farm-to-table wheat products, cultivated
-                        and crafted with care on our own lands.</p>
-                   <!--  <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#journey"
-                            class="bg-primary text-white px-8 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors whitespace-nowrap">Our
-                            Journey</a>
-                        <a href="#products"
-                            class="bg-white border-2 border-primary text-primary px-8 py-3 rounded-button font-medium hover:bg-primary hover:bg-opacity-10 transition-colors whitespace-nowrap">Our
-                            Products</a> 
-                    </div> -->
-                </div>
-            </div>
-        </section>
-        <!-- Products Section 
-        <section id="products" class="py-16 bg-[#FFF8EF]">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-secondary mb-4">Our Premium Products</h2>
-                    <p class="text-gray-700 max-w-2xl mx-auto">Discover our range of traditionally milled wheat
-                        products, crafted with care from field to package.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <section class="hero">
+            <!-- Decorative drawings in Hero section -->
+            <img src="assets/wheat-drawing.PNG" class="hero-deco-left blend-illustration" alt="">
+            <img src="assets/decorative-wheat-2.PNG" class="hero-deco-grains blend-illustration" alt="">
 
-                    <div
-                        class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg hover:-translate-y-1">
-                        <img src="https://readdy.ai/api/search-image?query=premium%20wheat%20flour%20in%20cloth%20packaging%2C%20golden%20color%2C%20rustic%20setting%2C%20high%20quality%20product%20photography%2C%20warm%20lighting%2C%20earthy%20tones%2C%20natural%20ingredients%2C%20professional%20food%20photography&width=600&height=400&seq=4&orientation=landscape"
-                            alt="Premium Wheat Flour" class="w-full h-64 object-cover object-top">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-secondary mb-3">Premium Wheat Flour</h3>
-                            <p class="text-gray-700 mb-4">Our signature stone-ground wheat flour, available in 5kg and
-                                10kg packages. Perfect for all your baking needs, from bread to pastries.</p>
-                            <div class="flex flex-wrap gap-3 mb-6">
-                                <span class="bg-[#FFF1DE] text-primary px-3 py-1 rounded-full text-sm font-medium">Stone
-                                    Ground</span>
-                                <span class="bg-[#FFF1DE] text-primary px-3 py-1 rounded-full text-sm font-medium">High
-                                    Protein</span>
-                                <span class="bg-[#FFF1DE] text-primary px-3 py-1 rounded-full text-sm font-medium">No
-                                    Additives</span>
-                            </div>
-                            <a href="wheat-flour.html"
-                                class="bg-primary text-white px-6 py-2 rounded-button font-medium inline-block hover:bg-opacity-90 transition-colors whitespace-nowrap">View
-                                Details</a>
-                        </div>
-                    </div>
-            
-                    <div
-                        class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg hover:-translate-y-1">
-                        <img src="https://readdy.ai/api/search-image?query=organic%20daliya%20wheat%20in%20transparent%20packaging%2C%20cracked%20wheat%20grains%20visible%2C%20natural%20product%2C%20earthy%20background%2C%20professional%20food%20photography%2C%20warm%20lighting%2C%20high%20quality%20product%20shot&width=600&height=400&seq=5&orientation=landscape"
-                            alt="Traditional Daliya" class="w-full h-64 object-cover object-top">
-                        <div class="p-6">
-                            <h3 class="text-2xl font-bold text-secondary mb-3">Traditional Daliya</h3>
-                            <p class="text-gray-700 mb-4">Our nutritious cracked wheat daliya, available in 1kg
-                                packages. A wholesome breakfast option packed with fiber and essential nutrients.</p>
-                            <div class="flex flex-wrap gap-3 mb-6">
-                                <span class="bg-[#FFF1DE] text-primary px-3 py-1 rounded-full text-sm font-medium">High
-                                    Fiber</span>
-                                <span
-                                    class="bg-[#FFF1DE] text-primary px-3 py-1 rounded-full text-sm font-medium">Protein
-                                    Rich</span>
-                                <span class="bg-[#FFF1DE] text-primary px-3 py-1 rounded-full text-sm font-medium">100%
-                                    Natural</span>
-                            </div>
-                            <a href="daliya.html"
-                                class="bg-primary text-white px-6 py-2 rounded-button font-medium inline-block hover:bg-opacity-90 transition-colors whitespace-nowrap">View
-                                Details</a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Hero image — absolutely positioned, bleeds to right -->
+            <div class="hero-media">
+                <img src="assets/golden-wheat-field-warm-sunlight.jpg" alt="Golden wheat field at sunset">
             </div>
-        </section> -->
-        <!-- Our Process Section -->
-        <section id="journey" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-secondary mb-4">The Journey of Our Grain</h2>
-                    <p class="text-gray-700 max-w-2xl mx-auto">Every grain tells a story that begins in our soil and
-                        ends at your table. Follow the journey of how we transform seeds into the finest flour.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                    <!-- Step 1: Planting -->
-                    <div class="bg-[#FFF8EF] rounded-lg overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=wheat%20seeds%20being%20planted%20in%20rich%20soil%2C%20close%20up%20of%20seeds%20in%20dark%20earth%2C%20natural%20farming%2C%20organic%20agriculture%2C%20no%20people%2C%20high%20quality%20professional%20photography&width=400&height=300&seq=10&orientation=landscape"
-                            alt="Planting Seeds" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                                <div class="w-6 h-6 flex items-center justify-center text-white">
-                                    <i class="ri-seedling-line"></i>
-                                </div>
-                            </div>
-                            <h3 class="text-xl font-bold text-secondary mb-3">Planting</h3>
-                            <p class="text-gray-700">We begin by selecting and planting the finest wheat seeds in our
-                                nutrient-rich soil.</p>
-                        </div>
-                    </div>
-                    <!-- Step 2: Growing -->
-                    <div class="bg-[#FFF8EF] rounded-lg overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=young%20wheat%20plants%20growing%20in%20field%2C%20golden%20sunrise%2C%20morning%20dew%20on%20wheat%20leaves%2C%20natural%20farming%2C%20no%20people%2C%20high%20quality%20professional%20photography&width=400&height=300&seq=11&orientation=landscape"
-                            alt="Growing Wheat" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                                <div class="w-6 h-6 flex items-center justify-center text-white">
-                                    <i class="ri-plant-line"></i>
-                                </div>
-                            </div>
-                            <h3 class="text-xl font-bold text-secondary mb-3">Growing</h3>
-                            <p class="text-gray-700">Over months, we nurture our wheat as it grows strong and tall in
-                                our sustainable fields.</p>
-                        </div>
-                    </div>
-                    <!-- Step 3: Harvesting -->
-                    <div class="bg-[#FFF8EF] rounded-lg overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=golden%20ripe%20wheat%20field%20ready%20for%20harvest%2C%20morning%20light%2C%20wheat%20ears%20close%20up%2C%20natural%20farming%2C%20no%20people%2C%20high%20quality%20professional%20photography&width=400&height=300&seq=12&orientation=landscape"
-                            alt="Harvesting" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                                <div class="w-6 h-6 flex items-center justify-center text-white">
-                                    <i class="ri-leaf-line"></i>
-                                </div>
-                            </div>
-                            <h3 class="text-xl font-bold text-secondary mb-3">Harvesting</h3>
-                            <p class="text-gray-700">At peak ripeness, we harvest our golden wheat, gathering the fruits
-                                of our patient care.</p>
-                        </div>
-                    </div>
-                    <!-- Step 4: Milling -->
-                    <div class="bg-[#FFF8EF] rounded-lg overflow-hidden">
-                        <img src="https://readdy.ai/api/search-image?query=traditional%20stone%20mill%20grinding%20wheat%2C%20close%20up%20of%20millstone%20with%20wheat%20grains%20and%20flour%2C%20artisanal%20process%2C%20no%20people%2C%20high%20quality%20professional%20photography&width=400&height=300&seq=13&orientation=landscape"
-                            alt="Milling" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                                <div class="w-6 h-6 flex items-center justify-center text-white">
-                                    <i class="ri-hammer-line"></i>
-                                </div>
-                            </div>
-                            <h3 class="text-xl font-bold text-secondary mb-3">Milling</h3>
-                            <p class="text-gray-700">Finally, we mill our wheat using traditional stone grinding to
-                                preserve every nutrient.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Quality Commitment Section -->
-        <section class="py-16 bg-[#FFF8EF]">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="w-full flex flex-col items-center justify-center text-center gap-6">
-                        <h2 class="text-3xl font-bold text-secondary mb-6">Our Quality Commitment</h2>
-                        <p class="text-gray-700 mb-4">At Kesari, quality is not just a promise, it's our heritage. Every
-                            bag of flour we produce meets the highest standards of purity and nutrition.</p>
-                        <div class="space-y-4 mb-6">
-                            <div class="flex items-start">
-                                <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-1">
-                                    <i class="ri-check-line ri-lg"></i>
-                                </div>
-                                <p class="text-gray-700">No artificial additives or preservatives</p>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-1">
-                                    <i class="ri-check-line ri-lg"></i>
-                                </div>
-                                <p class="text-gray-700">Rigorous quality testing at every stage</p>
-                            </div>
-                            <div class="flex items-start">
-                                <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-1">
-                                    <i class="ri-check-line ri-lg"></i>
-                                </div>
-                                <p class="text-gray-700">Full traceability from field to package</p>
-                            </div>
-                            <!-- <div class="flex items-start">
-                                <div class="w-6 h-6 flex items-center justify-center text-primary mr-3 mt-1">
-                                    <i class="ri-check-line ri-lg"></i>
-                                </div>
-                                <p class="text-gray-700">Certified organic farming practices</p>
-                            </div> -->
-                        </div>
 
-                        <!-- <div class="flex gap-4">
-                            <img src="https://readdy.ai/api/search-image?query=organic%20certification%20badge%2C%20minimalist%20design%2C%20professional%20looking%2C%20transparent%20background&width=80&height=80&seq=6&orientation=squarish"
-                                alt="Organic Certification" class="h-16 w-auto">
-                            <img src="https://readdy.ai/api/search-image?query=quality%20assurance%20badge%2C%20premium%20product%20seal%2C%20minimalist%20design%2C%20professional%20looking%2C%20transparent%20background&width=80&height=80&seq=7&orientation=squarish"
-                                alt="Quality Assurance" class="h-16 w-auto">
-                        </div> -->
-                    </div>
+            <div class="container mx-auto relative z-10">
+                <div class="hero-text-col">
+                    <div class="eyebrow"><span>Pure. Natural. Authentic.</span></div>
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style="line-height:1.12">From Our Farm to Your Table.</h1>
+                    <p class="text-ink-soft mb-8 max-w-lg text-lg">At Kesari, we control every step, from planting the seed to milling the flour. Experience the difference of truly farm to table wheat products, cultivated and crafted with care on our own lands.</p>
+                    <a href="about-us.html" class="btn-orange">Our Story <i class="ri-arrow-right-line"></i></a>
                 </div>
             </div>
-        </section>
-        <!-- FAQ Section -->
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-secondary mb-4">Frequently Asked Questions</h2>
-                    <p class="text-gray-700 max-w-2xl mx-auto">Find answers to common questions about our products and
-                        processes.</p>
-                </div>
-                <div class="max-w-3xl mx-auto space-y-6">
-                    <!-- FAQ Item 1 -->
-                    <div class="border border-gray-200 rounded-lg overflow-hidden">
-                        <button
-                            class="w-full flex justify-between items-center p-4 text-left bg-[#FFF8EF] hover:bg-[#FFF1DE] transition-colors"
-                            id="faq-btn-1">
-                            <span class="font-medium text-secondary">What makes stone-ground flour different from
-                                commercial flour?</span>
-                            <div class="w-6 h-6 flex items-center justify-center text-primary">
-                                <i class="ri-add-line ri-lg" id="faq-icon-1"></i>
-                            </div>
-                        </button>
-                        <div class="p-4 bg-white hidden" id="faq-content-1">
-                            <p class="text-gray-700">Stone-ground flour is milled slowly at cool temperatures,
-                                preserving the wheat germ and bran. This maintains more nutrients and natural flavor
-                                compared to commercial flour, which is often processed at high speeds and temperatures
-                                that can strip away nutritional value.</p>
-                        </div>
-                    </div>
-                    <!-- FAQ Item 2 -->
-                    <div class="border border-gray-200 rounded-lg overflow-hidden">
-                        <button
-                            class="w-full flex justify-between items-center p-4 text-left bg-[#FFF8EF] hover:bg-[#FFF1DE] transition-colors"
-                            id="faq-btn-2">
-                            <span class="font-medium text-secondary">How should I store Kesari flour?</span>
-                            <div class="w-6 h-6 flex items-center justify-center text-primary">
-                                <i class="ri-add-line ri-lg" id="faq-icon-2"></i>
-                            </div>
-                        </button>
-                        <div class="p-4 bg-white hidden" id="faq-content-2">
-                            <p class="text-gray-700">For optimal freshness, store our products in a cool, dry place away
-                                from direct sunlight. Once opened, transfer to an airtight container. For longer
-                                storage, refrigeration can extend shelf life, especially in warm or humid climates.</p>
-                        </div>
-                    </div>
-                    <!-- FAQ Item 3 -->
-                    <div class="border border-gray-200 rounded-lg overflow-hidden">
-                        <button
-                            class="w-full flex justify-between items-center p-4 text-left bg-[#FFF8EF] hover:bg-[#FFF1DE] transition-colors"
-                            id="faq-btn-3">
-                            <span class="font-medium text-secondary">What is the shelf life of your products?</span>
-                            <div class="w-6 h-6 flex items-center justify-center text-primary">
-                                <i class="ri-add-line ri-lg" id="faq-icon-3"></i>
-                            </div>
-                        </button>
-                        <div class="p-4 bg-white hidden" id="faq-content-3">
-                            <p class="text-gray-700">Our wheat flour typically has a shelf life of 6-8 months when
-                                stored properly. Daliya can last up to 12 months. Each package has a production date and
-                                best-before date printed on it. For the freshest experience.</p>
-                        </div>
-                    </div>
-                    <!-- FAQ Item 4 
-                    <div class="border border-gray-200 rounded-lg overflow-hidden">
-                        <button
-                            class="w-full flex justify-between items-center p-4 text-left bg-[#FFF8EF] hover:bg-[#FFF1DE] transition-colors"
-                            id="faq-btn-4">
-                            <span class="font-medium text-secondary">Are your products organic?</span>
-                            <div class="w-6 h-6 flex items-center justify-center text-primary">
-                                <i class="ri-add-line ri-lg" id="faq-icon-4"></i>
-                            </div>
-                        </button>
-                        <div class="p-4 bg-white hidden" id="faq-content-4">
-                            <p class="text-gray-700">Yes, all Kesari products are certified organic. We grow our wheat
-                                using sustainable farming practices without synthetic pesticides or fertilizers. Our products meet strict standards for organic
-                                production from field to package.</p>
-                        </div>-->
-                    </div>
-                </div>
-            </div>
+
+            <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,60 C240,110 420,10 720,45 C1020,80 1240,15 1440,55 L1440,100 L0,100 Z" fill="#ffffff"/>
+            </svg>
         </section>
 
-        <!-- where to find our product-->
-        <section class="py-16 bg-[#FFF8EF]">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="container mx-auto px-4">
-                        <div class="text-center mb-12">
-                            <h2 class="text-3xl font-bold text-secondary mb-4">Find our products in..</h2>
+        <!-- Journey Section -->
+        <section id="journey" class="journey-section" style="background: #ffffff;">
+            <!-- Barn drawing aligned with container left padding -->
+            <img src="assets/barn-drawing.PNG" class="journey-bg-illustration blend-illustration" alt="">
+            <div class="container mx-auto relative z-10">
+                <div class="grid gap-12 journey-grid" style="grid-template-columns: 0.85fr 2fr;">
+                    <div>
+                        <div class="eyebrow"><span>The Journey</span><span class="eyebrow-rule"></span></div>
+                        <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style="line-height:1.2">The Journey of Our Grain</h2>
+                        <p class="text-ink-soft text-lg max-w-sm">Every grain tells a story that begins in our soil and ends at your table. Follow the journey of how we transform seeds into the finest flour.</p>
+                    </div>
 
-                        <!-- Spudshed icon -->
-                        <div class="flex gap-4 justify-center">
-                            <img src="Resources/Spud_Shed_logo.png" 
-                                alt="Organic Certification" class="h-16 w-auto">
-
-                        <!-- 
-                        <div class="flex gap-4">
-                            <img src="Resources/Spud_Shed_logo.png" 
-                                alt="Organic Certification" class="h-16 w-auto"> -->
-
+                    <div>
+                        <div class="step-track">
+                            <div class="step-num">01</div>
+                            <div class="step-num">02</div>
+                            <div class="step-num">03</div>
+                            <div class="step-num">04</div>
+                        </div>
+                        <div class="grid gap-6 step-cards" style="grid-template-columns: repeat(4, 1fr);">
+                            <!-- Step 1 -->
+                            <div class="step-card">
+                                <div class="step-img-wrap">
+                                    <img src="assets/seeds-in-soil.PNG" alt="Planting seeds">
+                                </div>
+                                <div class="step-icon-badge"><i class="ri-seedling-line"></i></div>
+                                <div class="step-body">
+                                    <h3 class="font-bold text-ink mb-2">Planting</h3>
+                                    <p class="text-ink-soft">We begin by selecting and planting the finest wheat seeds in our nutrient-rich soil.</p>
+                                </div>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="step-card">
+                                <div class="step-img-wrap">
+                                    <img src="assets/green-wheat.PNG" alt="Growing wheat">
+                                </div>
+                                <div class="step-icon-badge"><i class="ri-plant-line"></i></div>
+                                <div class="step-body">
+                                    <h3 class="font-bold text-ink mb-2">Growing</h3>
+                                    <p class="text-ink-soft">Over months, we nurture our wheat as it grows strong and tall in our sustainable fields.</p>
+                                </div>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="step-card">
+                                <div class="step-img-wrap">
+                                    <img src="assets/wheat-yellow.PNG" alt="Harvesting wheat">
+                                </div>
+                                <div class="step-icon-badge"><i class="ri-leaf-line"></i></div>
+                                <div class="step-body">
+                                    <h3 class="font-bold text-ink mb-2">Harvesting</h3>
+                                    <p class="text-ink-soft">At peak ripeness, we harvest our golden wheat, gathering the fruits of our patient care.</p>
+                                </div>
+                            </div>
+                            <!-- Step 4 -->
+                            <div class="step-card">
+                                <div class="step-img-wrap">
+                                    <img src="assets/wheat-milling.PNG" alt="Milling wheat">
+                                </div>
+                                <div class="step-icon-badge"><i class="ri-hourglass-line"></i></div>
+                                <div class="step-body">
+                                    <h3 class="font-bold text-ink mb-2">Milling</h3>
+                                    <p class="text-ink-soft">Finally, we mill our wheat using traditional stone grinding to preserve every nutrient.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
-            <div class="container mx-auto px-4 ">
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="flex flex-col md:flex-row gap-12">
-                        <div class="md:w-1/2">
-                            <h2 class="text-3xl font-bold text-secondary mb-6">Get in Touch</h2>
-                            <p class="text-gray-700 mb-8">Have questions about our products or want to learn more about
-                                our traditional milling process? We'd love to hear from you.</p>
-                            <!-- <div class="space-y-6">
-                                <div class="flex items-start">
-                                    <div
-                                        class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                        <div class="w-5 h-5 flex items-center justify-center text-primary">
-                                            <i class="ri-map-pin-line"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-medium text-secondary mb-1">Our Location</h3>
-                                        <p class="text-gray-700"> 59 Hines Hill Road North, Hines Hill </p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div
-                                        class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                        <div class="w-5 h-5 flex items-center justify-center text-primary">
-                                            <i class="ri-phone-line"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-medium text-secondary mb-1">Phone</h3>
-                                        <p class="text-gray-700">+61 430 116 375</p>
-                                    </div>
-                                </div> 
-                                <div class="flex items-start">
-                                    <div
-                                        class="w-10 h-10 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mr-4">
-                                        <div class="w-5 h-5 flex items-center justify-center text-primary">
-                                            <i class="ri-mail-line"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-medium text-secondary mb-1">Email</h3>
-                                        <p class="text-gray-700">kartafarms@gmail.com</p>
-                                    </div>
-                                </div> -->
-                            </div> 
-                        </div> 
+        <!-- Quality / Promise Section -->
+        <section class="promise-section">
+            <!-- Decorative wheat illustration on the right -->
+            <img src="assets/decorative-wheat-2.PNG" class="promise-deco blend-illustration" alt="">
+            <div class="container mx-auto relative z-10">
+                <div class="grid gap-12 promise-grid" style="grid-template-columns: 1.05fr 1.15fr; align-items: center;">
+                    <div class="promise-media">
+                        <img src="assets/stashed-flour-used-cooking.jpg" alt="Sack of stone-ground flour with wheat">
+                    </div>
+                    <div class="promise-content">
+                        <div class="eyebrow"><span>Our Promise</span><span class="eyebrow-rule"></span></div>
+                        <h2 class="font-serif font-bold mb-6">Quality is not just our promise, it's our heritage.</h2>
+                        <p class="text-ink-soft intro">At Kesari, quality is not just a promise, it's our heritage. Every bag of flour we produce meets the highest standards of purity and nutrition.</p>
+                        
+                        <div class="promise-points-list">
+                            <div class="promise-point">
+                                <div class="promise-icon"><i class="ri-leaf-line"></i></div>
+                                <p>No artificial additives or preservatives</p>
+                            </div>
+                            <div class="promise-point">
+                                <div class="promise-icon"><i class="ri-shield-check-line"></i></div>
+                                <p>Rigorous quality testing at every stage</p>
+                            </div>
+                            <div class="promise-point">
+                                <div class="promise-icon"><i class="ri-time-line"></i></div>
+                                <p>Full traceability from field to package</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div class="md:w-1/2">
-                            <div class="bg-[#FFF8EF] p-6 rounded-lg shadow-md ">
-                                <h3 class="text-xl font-bold text-secondary mb-4">Send us a Message</h3>
-                                <form
-                                action="https://formspree.io/f/xjknovdw"
-                                method="POST"
-                                >
-
-                                <input type="hidden" name="_redirect" value="false">
-                                
-                                <div class="mb-4">
-                                    <label for="name" class="block text-gray-700 mb-2">Your Name</label>
-                                    <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                                    placeholder="John Doe"
-                                    required
-                                    >
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="email" class="block text-gray-700 mb-2">Email Address</label>
-                                    <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                                    placeholder="john@example.com"
-                                    required
-                                    >
-                                </div>
-
-                                <div class="mb-4">
-                                    <label for="subject" class="block text-gray-700 mb-2">Subject</label>
-                                    <input
-                                    type="text"
-                                    id="subject"
-                                    name="subject"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                                    placeholder="Product Inquiry"
-                                    >
-                                </div>
-
-                                <div class="mb-6">
-                                    <label for="message" class="block text-gray-700 mb-2">Your Message</label>
-                                    <textarea
-                                    id="message"
-                                    name="message"
-                                    rows="4"
-                                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
-                                    placeholder="How can we help you?"
-                                    required
-                                    ></textarea>
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    class="bg-primary text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-colors w-full whitespace-nowrap"
-                                >
-                                    Send Message
+        <!-- FAQ + Find Us Section -->
+        <section class="faq-find-section" style="background: #ffffff;">
+            <!-- Decorative wheat drawing on the left (raised higher above Contact section) -->
+            <img src="assets/decorative-wheat.PNG" class="faq-deco-wheat blend-illustration" alt="">
+            <div class="container mx-auto relative z-10">
+                <div class="grid gap-12 faq-find-grid" style="grid-template-columns: 1fr 1fr;">
+                    <div>
+                        <div class="eyebrow"><span>Frequently Asked Questions</span><span class="eyebrow-rule"></span></div>
+                        <div class="space-y-5">
+                            <div class="faq-item">
+                                <button id="faq-btn-1">
+                                    <span>What makes stone-ground flour different from commercial flour?</span>
+                                    <span class="faq-toggle"><i class="ri-add-line" id="faq-icon-1"></i></span>
                                 </button>
-                                </form>
-
+                                <div class="faq-panel hidden" id="faq-content-1">
+                                    Stone-ground flour is milled slowly at cool temperatures, preserving the wheat germ and bran. This maintains more nutrients and natural flavor compared to commercial flour, which is often processed at high speeds and temperatures that can strip away nutritional value.
+                                </div>
                             </div>
-                        </div> 
+                            <div class="faq-item">
+                                <button id="faq-btn-2">
+                                    <span>How should I store Kesari flour?</span>
+                                    <span class="faq-toggle"><i class="ri-add-line" id="faq-icon-2"></i></span>
+                                </button>
+                                <div class="faq-panel hidden" id="faq-content-2">
+                                    For optimal freshness, store our products in a cool, dry place away from direct sunlight. Once opened, transfer to an airtight container. For longer storage, refrigeration can extend shelf life, especially in warm or humid climates.
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button id="faq-btn-3">
+                                    <span>What is the shelf life of your products?</span>
+                                    <span class="faq-toggle"><i class="ri-add-line" id="faq-icon-3"></i></span>
+                                </button>
+                                <div class="faq-panel hidden" id="faq-content-3">
+                                    Our wheat flour typically has a shelf life of 6-8 months when stored properly. Daliya can last up to 12 months. Each package has a production date and best-before date printed on it for the freshest experience.
+                                </div>
+                            </div>
+                        </div>
                     </div>
+
+                    <div class="find-card">
+                        <img class="find-photo" src="assets/flour-in-bowl.PNG" alt="Flour in a wooden bowl">
+                        <div class="find-card-content">
+                            <h3 class="font-serif text-3xl font-bold mb-3">Find our products in..</h3>
+                            <div style="width:48px;height:3px;background:#D6862E;margin-bottom:24px;"></div>
+                            <img src="assets/Spud_Shed_logo.png" alt="Spudshed" class="h-16 w-auto mb-6 blend-illustration">
+                            <p class="text-ink-soft text-lg mb-6">Proudly available at Spudshed stores across Western Australia.</p>
+                            <a href="https://www.spudshed.com.au/find-your-store/" target="_blank" rel="noopener" class="text-primary text-lg font-semibold inline-flex items-center gap-2">View Locations <i class="ri-arrow-right-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container mx-auto">
+                <div class="grid gap-14 contact-grid" style="grid-template-columns: 0.85fr 1.15fr; align-items: start;">
+                    <div>
+                        <div class="eyebrow"><span>Get in Touch</span><span class="eyebrow-rule"></span></div>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6" style="line-height:1.2">We'd love to hear from you.</h2>
+                        <p class="text-ink-soft text-lg">Have questions about our products or want to learn more about our traditional milling process? Send us a message and we'll get back to you as soon as possible.</p>
+                        
+                        <!-- Contact drawing positioned directly under text with blend mode -->
+                        <img src="assets/contact-drawing.PNG" class="contact-deco-inline blend-illustration" alt="Wheat decoration">
+                    </div>
+
+                    <form action="https://formspree.io/f/xjknovdw" method="POST" class="grid gap-5" style="grid-template-columns: 1fr 1fr;">
+                        <input type="hidden" name="_redirect" value="false">
+                        <input type="text" name="name" class="contact-input" placeholder="Your Name" required>
+                        <input type="email" name="email" class="contact-input" placeholder="Email Address" required>
+                        <input type="text" name="subject" class="contact-input" style="grid-column: 1 / -1;" placeholder="Subject">
+                        <textarea name="message" rows="5" class="contact-input" style="grid-column: 1 / -1;" placeholder="Your Message" required></textarea>
+                        <div style="grid-column: 1 / -1;">
+                            <button type="submit" class="btn-orange">Send Message <i class="ri-arrow-right-line"></i></button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
     </main>
+
     <!-- Footer -->
-    <footer class="bg-secondary text-white pt-12 pb-6">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <footer class="site-footer pt-20 pb-0">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
                 <div>
-                    <img src="https://static.readdy.ai/image/af55a22033e8b80800e7ff55fb495b36/04bd865b84d440975edf34a59cb6aa73.png"
-                        alt="Kesari Logo" class="h-12 mb-4">
-                    <p class="text-gray-300 mb-4">Preserving tradition in every grain since 2020.</p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/Kartafarm/" class="text-gray-300 hover:text-white transition-colors">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <i class="ri-facebook-fill"></i>
-                            </div>
-                        </a>
-                        <a href="https://www.instagram.com/kartafarms/" class="text-gray-300 hover:text-white transition-colors">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <i class="ri-instagram-line"></i>
-                            </div>
-                        </a>
-                        <!-- <a href="#" class="text-gray-300 hover:text-white transition-colors">
-                            <div class="w-8 h-8 flex items-center justify-center">
-                                <i class="ri-twitter-x-line"></i>
-                            </div>
-                        </a> -->
-                    </div>
+                    <a href="index.html" class="footer-logo-wrap mb-4">
+                        <img src="assets/Logo.png" alt="Kesari Logo" class="footer-logo-img">
+                    </a>
+                    <p class="text-base mt-4 max-w-[240px]">From our farm to your table.<br>Thank you for supporting our journey.</p>
                 </div>
-                <!-- <div>
-                    <h3 class="text-lg font-medium mb-4">Products</h3>
-                    <ul class="space-y-2">
-                        <li><a href="wheat-flour.html" class="text-gray-300 hover:text-white transition-colors">Wheat
-                                Flour</a></li>
-                        <li><a href="daliya.html" class="text-gray-300 hover:text-white transition-colors">Daliya</a>
-                        </li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Nutritional
-                                Information</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Storage Guidelines</a>
-                        </li>
-                    </ul>
-                </div> -->
-                <div class="md:col-start-3 md:text-left">
-                    <h3 class="text-lg font-medium mb-4">Kesari Atta</h3>
-                    <ul class="space-y-2">
-                        <li><a href="about-us.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
-                        <!-- <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Our Process</a></li>
-                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors">Sustainability</a></li> -->
-                        <li><a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+                <div>
+                    <h3 class="mb-5">Quick Links</h3>
+                    <ul class="space-y-3 text-base">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                
-            </div>
-            <div class="border-t border-gray-700 pt-6 mt-6">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm">&copy; 2025 Kesari. All rights reserved.</p>
-                    <div class="flex space-x-4 mt-4 md:mt-0">
-                        <!-- <a class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
-                        <a class="text-gray-400 hover:text-white text-sm transition-colors">Terms of
-                            Service</a>
-                        <a class="text-gray-400 hover:text-white text-sm transition-colors">Cookie Policy</a> -->
-                    </div>
+                <div>
+                    <h3 class="mb-5">Connect</h3>
+                    <ul class="space-y-4 text-base">
+                        <li class="flex items-center gap-3"><i class="ri-facebook-fill text-lg"></i><a href="https://www.facebook.com/Kartafarm/" target="_blank" rel="noopener">Kartafarm</a></li>
+                        <li class="flex items-center gap-3"><i class="ri-instagram-line text-lg"></i><a href="https://www.instagram.com/kartafarms/" target="_blank" rel="noopener">@kartafarms</a></li>
+                        <li class="flex items-center gap-3"><i class="ri-mail-line text-lg"></i><a href="mailto:kartafarms@gmail.com">kartafarms@gmail.com</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
+        <div class="footer-bottom py-5 mt-4">
+            <p class="text-center text-base text-ink-soft">&copy; 2025 Kesari. All rights reserved.</p>
+        </div>
+        <img src="assets/windmill-drawing.PNG" class="footer-windmill blend-illustration" alt="Windmill">
     </footer>
-
 
     <!-- Scripts -->
     <script id="faq-accordion">
@@ -568,7 +320,6 @@
                     const id = this.id.split('-')[2];
                     const content = document.getElementById(`faq-content-${id}`);
                     const icon = document.getElementById(`faq-icon-${id}`);
-                    // Toggle content visibility
                     if (content.classList.contains('hidden')) {
                         content.classList.remove('hidden');
                         icon.classList.remove('ri-add-line');
@@ -587,16 +338,15 @@
             const menuButton = document.getElementById('mobile-menu-button');
             const closeButton = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
-            
+
             function toggleMenu() {
                 mobileMenu.classList.toggle('hidden');
                 document.body.classList.toggle('overflow-hidden');
             }
-            
+
             menuButton.addEventListener('click', toggleMenu);
             closeButton.addEventListener('click', toggleMenu);
-            
-            // Close menu when clicking a link
+
             const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
             Array.from(mobileMenuLinks).forEach(link => {
                 link.addEventListener('click', toggleMenu);

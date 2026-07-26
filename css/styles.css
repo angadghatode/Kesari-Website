@@ -1,0 +1,682 @@
+/* ==========================================================================
+   Kesari — shared design system (index.html + about-us.html)
+   ========================================================================== */
+
+:root {
+  --cream: #FBF7F1;
+  --cream-alt: #F6ECDD;
+  --tan: #F1E1C7;
+  --tan-deep: #E7CFA6;
+  --footer-bg: #EAD8C0; /* Distinct cozy warm footer background */
+  --card: #FDF8EF;
+  --ink: #2B1810;
+  --ink-soft: #5c4d3e;
+  --orange: #D6862E;
+  --orange-dark: #BD6F1E;
+  --line: #ecdfc9;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--ink-soft);
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Playfair Display', serif;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+a { text-decoration: none; }
+
+input:focus, textarea:focus { outline: none; }
+
+/* Wide responsive container across all pages */
+.container { 
+  max-width: 100% !important;
+  padding-right: 5% !important;
+  padding-left: 5% !important;
+}
+
+/* Ensure no container or section creates an unintended isolation layer */
+main, section, header, footer, div {
+  isolation: auto !important;
+}
+
+/* ---------- Image Blending (Removes white background on drawings/logos) ---------- */
+/* mix-blend-mode: multiply composites the image against the page background,
+   effectively removing any white fill baked into the PNG. Works best when the
+   parent has a warm cream/tan background (not pure white). */
+.blend-illustration {
+  mix-blend-mode: multiply;
+  background: transparent;
+}
+.contact-deco-inline {
+  mix-blend-mode: multiply;
+  background: transparent;
+  display: block;
+}
+.footer-logo-img {
+  mix-blend-mode: multiply;
+  background: transparent;
+  z-index: 100;
+}
+.logo-mark img {
+  mix-blend-mode: multiply;
+  background: transparent;
+}
+/* Spudshed logo in find-card also needs blend mode */
+.find-card img[alt="Spudshed"],
+.find-card-content img {
+  mix-blend-mode: multiply;
+  background: transparent;
+}
+
+/* ---------- Buttons ---------- */
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--orange);
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 13px 30px;
+  border-radius: 999px;
+  transition: background .2s ease, transform .2s ease;
+  white-space: nowrap;
+}
+.btn-orange:hover { background: var(--orange-dark); transform: translateY(-2px); }
+.btn-orange i { font-size: 18px; }
+
+/* ---------- Eyebrow label ---------- */
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.eyebrow .eyebrow-rule {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 1.5px;
+  background: var(--orange);
+  opacity: .65;
+}
+.eyebrow-icon {
+  display: none !important;
+}
+.eyebrow.center { justify-content: center; }
+
+/* ---------- Header / Navbar ---------- */
+.site-header {
+  background: var(--cream-alt);
+  border-bottom: 1px solid rgba(214, 134, 46, 0.18);
+  box-shadow: 0 4px 16px rgba(43, 24, 16, 0.05);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.site-header .container {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+.logo-mark img {
+  height: 48px !important;
+  width: auto;
+  mix-blend-mode: multiply !important;
+}
+
+.logo-mark { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
+.nav-link {
+  color: var(--ink);
+  font-weight: 500;
+  font-size: 15px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
+}
+.nav-link:hover { color: var(--orange); }
+.nav-link.active { color: var(--orange); border-color: var(--orange); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  background: var(--cream);
+  padding-top: 40px;
+  padding-bottom: 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Decorative drawings inside Hero section */
+.hero-deco-left {
+  position: absolute;
+  left: -40px;
+  top: 20px;
+  width: 240px;
+  height: auto;
+  opacity: .45;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-deco-grains {
+  position: absolute;
+  left: 360px;
+  bottom: 60px;
+  width: 120px;
+  height: auto;
+  opacity: .65;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Hero image — absolutely positioned, bleeds to right viewport edge */
+.hero-media {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%);
+  z-index: 1;
+}
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text-col {
+  position: relative;
+  z-index: 3;
+  max-width: 560px;
+  padding: 60px 0;
+}
+
+.hero-text-col h1 {
+  font-size: 3.25rem;
+  line-height: 1.12;
+}
+
+.hero-text-col p {
+  font-size: 1.125rem;
+}
+
+.wave-divider {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 90px;
+  z-index: 3;
+}
+
+/* ---------- Journey section ---------- */
+.journey-section {
+  position: relative;
+  overflow: hidden;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+/* Barn drawing — aligned with container left padding */
+.journey-bg-illustration {
+  position: absolute;
+  left: 5%;
+  bottom: 0;
+  width: 480px;
+  max-width: 38%;
+  height: auto;
+  opacity: .75;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Step number track */
+.step-track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 22px;
+}
+.step-track::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  right: 40px;
+  height: 1px;
+  background-image: linear-gradient(to right, var(--orange) 55%, transparent 0%);
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
+  z-index: 0;
+}
+.step-num {
+  position: relative;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--orange);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* Step cards — transparent card, tall elegant arch image */
+.step-card {
+  position: relative;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+}
+.step-card .step-img-wrap {
+  position: relative;
+  height: 270px;
+  border-radius: 135px 135px 16px 16px;
+  overflow: hidden;
+}
+.step-card .step-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.step-icon-badge {
+  position: absolute;
+  left: 50%;
+  top: 270px;
+  transform: translate(-50%, -50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(43, 24, 16, .16);
+  z-index: 10;
+}
+.step-icon-badge i { color: var(--orange); font-size: 22px; }
+.step-card .step-body {
+  padding: 38px 8px 12px;
+  text-align: center;
+}
+.step-card .step-body h3 {
+  font-size: 1.25rem;
+}
+.step-card .step-body p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* ---------- Promise / quality section ---------- */
+.promise-section {
+  position: relative;
+  background: linear-gradient(120deg, var(--tan-deep) 0%, var(--tan) 45%, var(--cream) 100%);
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* Bleeds off the far left edge with increased height and organic curve */
+.promise-media {
+  position: relative;
+  margin-left: calc(-1 * (100vw - 100%) / 2);
+  width: calc(100% + (100vw - 100%) / 2);
+  height: 560px;
+  border-radius: 0 220px 220px 0 / 0 160px 160px 0;
+  overflow: hidden;
+  box-shadow: 14px 0 44px rgba(43, 24, 16, .18);
+}
+.promise-media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Decorative wheat illustration on the right side of promise section */
+.promise-deco {
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 260px;
+  height: auto;
+  opacity: .50;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.promise-content {
+  padding-left: 20px;
+}
+
+.promise-content h2 {
+  font-size: 2.75rem;
+  line-height: 1.2;
+}
+
+.promise-content p.intro {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+}
+
+.promise-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.promise-point { display: flex; align-items: center; gap: 18px; }
+.promise-icon {
+  flex: 0 0 auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px -4px rgba(214, 134, 46, .65);
+}
+.promise-icon i { color: #fff; font-size: 22px; }
+.promise-point p { font-weight: 600; color: var(--ink); font-size: 1.05rem; line-height: 1.4; margin: 0; }
+
+/* ---------- About Us Page — Left-Bleed Hero (mirrors index.html hero, flipped) ---------- */
+.about-hero-section {
+  position: relative;
+  background: var(--cream);
+  padding-top: 40px;
+  padding-bottom: 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Image bleeds off the LEFT edge — absolutely positioned */
+.about-hero-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  overflow: hidden;
+  /* Gradient mask: fades from visible on the left to transparent on the right */
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, black 18%);
+  mask-image: linear-gradient(to left, transparent 0%, black 18%);
+  z-index: 1;
+}
+.about-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Text column sits on the RIGHT, mirroring hero-text-col */
+.about-text-col {
+  position: relative;
+  z-index: 3;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: 8%;   /* pull inward so text centres in the right half */
+  padding: 60px 0;
+}
+
+.about-text-col h1 {
+  font-size: 3.25rem;
+  line-height: 1.12;
+}
+
+.about-text-col p {
+  font-size: 1.125rem;
+}
+
+/* ---------- FAQ accordion ---------- */
+.faq-item {
+  background: var(--card);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(214, 134, 46, 0.12);
+}
+.faq-item button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 26px;
+  text-align: left;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.faq-toggle {
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--orange);
+  font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.faq-item .faq-panel { padding: 0 26px 22px; color: var(--ink-soft); font-size: 1rem; line-height: 1.65; }
+
+/* ---------- FAQ + Find us wrapper ---------- */
+.faq-find-section {
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.faq-deco-wheat {
+  position: absolute;
+  left: 20px;
+  bottom: 80px;
+  width: 240px;
+  height: auto;
+  opacity: .55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Find us / spudshed card ---------- */
+.find-card {
+  position: relative;
+  background: var(--tan);
+  border-radius: 24px;
+  padding: 48px 40px;
+  overflow: hidden;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0 12px 30px rgba(43, 24, 16, 0.08);
+}
+.find-card .find-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 48%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 24px 24px 0;
+  opacity: .95;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%);
+  mask-image: linear-gradient(to right, transparent 0%, black 18%);
+}
+.find-card-content {
+  position: relative;
+  z-index: 10;
+  max-width: 55%;
+}
+
+/* ---------- Contact section ---------- */
+.contact-section {
+  position: relative;
+  background: linear-gradient(180deg, var(--tan) 0%, var(--cream-alt) 100%);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.contact-input {
+  width: 100%;
+  padding: 16px 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--ink);
+  transition: border-color 0.2s ease;
+}
+.contact-input::placeholder { color: #9c8f7f; }
+.contact-input:focus { border-color: var(--orange); }
+
+/* Contact drawing — placed inside left text column under text */
+.contact-deco-inline {
+  width: 340px;
+  max-width: 100%;
+  height: auto;
+  opacity: .75;
+  margin-top: 24px;
+  pointer-events: none;
+  mix-blend-mode: multiply !important;
+}
+
+/* ---------- Footer (dark theme — matches logo's brown) ---------- */
+.site-footer { 
+  background: #2E1A0E;
+  color: rgba(251,247,241,0.85); 
+  position: relative; 
+  overflow: hidden; 
+}
+.site-footer h3 { color: #FBF7F1; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 17px; }
+.site-footer a, .site-footer p { color: rgba(251,247,241,0.65); font-size: 15px; }
+.site-footer a:hover { color: var(--orange); }
+.site-footer i { color: rgba(251,247,241,0.5); }
+
+/* Cream badge around logo so multiply blends against cream, not the dark bg */
+.footer-logo-wrap {
+  display: inline-block;
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 10px 14px;
+  isolation: isolate;  /* own stacking context so multiply works against cream */
+}
+.footer-logo-img {
+  height: 52px;
+  width: auto;
+  mix-blend-mode: multiply;
+}
+
+/* Windmill as a subtle light watermark via screen blend on dark bg */
+.footer-windmill {
+  position: absolute;
+  right: 40px;
+  bottom: 20px;
+  width: 220px;
+  height: auto;
+  opacity: .18;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.footer-bottom { background: rgba(0,0,0,0.2); }
+.footer-bottom p { color: rgba(251,247,241,0.45) !important; }
+
+/* ---------- Utility ---------- */
+.text-ink { color: var(--ink); }
+.text-ink-soft { color: var(--ink-soft); }
+.bg-cream { background: var(--cream); }
+.bg-cream-alt { background: var(--cream-alt); }
+.bg-tan { background: var(--tan); }
+.bg-card { background: var(--card); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding-top: 30px;
+    padding-bottom: 0;
+  }
+  .hero-media {
+    position: relative !important;
+    width: 100% !important;
+    height: 320px !important;
+    margin-top: 32px;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+  .hero-text-col {
+    max-width: 100%;
+    padding: 20px 0;
+  }
+  .hero-deco-left, .hero-deco-grains { display: none; }
+  .journey-grid { grid-template-columns: 1fr !important; }
+  .journey-bg-illustration { left: 0; width: 100%; max-width: 100%; }
+  .step-track { grid-template-columns: repeat(2, 1fr) !important; row-gap: 46px; margin-top: 24px; }
+  .step-track::before { display: none; }
+  .step-cards { grid-template-columns: repeat(2, 1fr) !important; }
+  .promise-grid { grid-template-columns: 1fr !important; }
+  .promise-media {
+    margin-left: 0 !important;
+    width: 100% !important;
+    height: 320px !important;
+    border-radius: 16px !important;
+  }
+  .promise-content { padding-left: 0 !important; }
+  .about-hero-media {
+    position: relative !important;
+    width: 100% !important;
+    height: 320px !important;
+    margin-bottom: 32px;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+  .about-hero-section {
+    min-height: auto;
+    padding-top: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .about-text-col { margin-left: 0 !important; max-width: 100% !important; padding: 20px 0; }
+  .faq-find-grid { grid-template-columns: 1fr !important; }
+  .find-card { margin-top: 24px; }
+  .find-card-content { max-width: 100% !important; }
+  .find-card .find-photo { display: none; }
+  .contact-grid { grid-template-columns: 1fr !important; }
+  .about-grid { grid-template-columns: 1fr !important; }
+  .footer-windmill { display: none; }
+  .faq-deco-wheat { display: none; }
+  .contact-deco-inline { width: 240px; }
+  .promise-deco { display: none; }
+}
