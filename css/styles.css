@@ -1,20 +1,19 @@
 /* ==========================================================================
-   Kesari — shared design system (index.html + about-us.html)
+   Kesari — design system  (index.html + about-us.html)
    ========================================================================== */
 
 :root {
-  --cream: #FBF7F1;
-  --cream-alt: #F6ECDD;
-  --tan: #F1E1C7;
-  --tan-deep: #E7CFA6;
-  --footer-bg: #EAD8C0; /* Distinct cozy warm footer background */
-  --card: #FDF8EF;
-  --ink: #2B1810;
-  --ink-soft: #5c4d3e;
-  --orange: #D6862E;
-  --orange-dark: #BD6F1E;
-  --line: #ecdfc9;
-  --white: #ffffff;
+  --cream:      #FBF7F1;
+  --cream-alt:  #F6ECDD;
+  --tan:        #F1E1C7;
+  --tan-deep:   #E7CFA6;
+  --card:       #FDF8EF;
+  --ink:        #2B1810;
+  --ink-soft:   #5c4d3e;
+  --orange:     #D6862E;
+  --orange-dark:#BD6F1E;
+  --line:       #ecdfc9;
+  --white:      #ffffff;
 }
 
 * { box-sizing: border-box; }
@@ -38,22 +37,14 @@ a { text-decoration: none; }
 
 input:focus, textarea:focus { outline: none; }
 
-/* Wide responsive container across all pages */
-.container { 
+.container {
   max-width: 100% !important;
   padding-right: 5% !important;
   padding-left: 5% !important;
 }
 
-/* Ensure no container or section creates an unintended isolation layer */
-main, section, header, footer, div {
-  isolation: auto !important;
-}
-
-/* ---------- Image Blending (Removes white background on drawings/logos) ---------- */
-/* mix-blend-mode: multiply composites the image against the page background,
-   effectively removing any white fill baked into the PNG. Works best when the
-   parent has a warm cream/tan background (not pure white). */
+/* ---------- Blend helpers ---------- */
+/* multiply removes white baked into PNGs when the parent bg is warm/cream */
 .blend-illustration {
   mix-blend-mode: multiply;
   background: transparent;
@@ -63,16 +54,7 @@ main, section, header, footer, div {
   background: transparent;
   display: block;
 }
-.footer-logo-img {
-  mix-blend-mode: multiply;
-  background: transparent;
-  z-index: 100;
-}
-.logo-mark img {
-  mix-blend-mode: multiply;
-  background: transparent;
-}
-/* Spudshed logo in find-card also needs blend mode */
+/* Spudshed logo in find-card */
 .find-card img[alt="Spudshed"],
 .find-card-content img {
   mix-blend-mode: multiply;
@@ -115,33 +97,43 @@ main, section, header, footer, div {
   background: var(--orange);
   opacity: .65;
 }
-.eyebrow-icon {
-  display: none !important;
-}
 .eyebrow.center { justify-content: center; }
 
 /* ---------- Header / Navbar ---------- */
 .site-header {
-  background: var(--cream-alt);
-  border-bottom: 1px solid rgba(214, 134, 46, 0.18);
-  box-shadow: 0 4px 16px rgba(43, 24, 16, 0.05);
+  background: #2E1A0E;
+  border-bottom: 1px solid rgba(214, 134, 46, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
-
 .site-header .container {
   padding-top: 10px !important;
   padding-bottom: 10px !important;
 }
 
+/*
+  Logo sits in a cream badge so mix-blend-mode:multiply works against cream
+  rather than the dark navbar background. The shadow makes it feel elevated,
+  not accidental.
+*/
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 4px 10px;
+  isolation: isolate;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+}
 .logo-mark img {
   height: 48px !important;
   width: auto;
-  mix-blend-mode: multiply !important;
+  mix-blend-mode: multiply;
 }
 
-.logo-mark { display: flex; flex-direction: column; align-items: flex-start; line-height: 1; }
 .nav-link {
-  color: var(--ink);
+  color: rgba(251,247,241,0.8);
   font-weight: 500;
   font-size: 15px;
   padding-bottom: 2px;
@@ -162,13 +154,11 @@ main, section, header, footer, div {
   align-items: center;
   overflow: hidden;
 }
-
 .hero .container {
   position: relative;
   z-index: 2;
 }
 
-/* Decorative drawings inside Hero section */
 .hero-deco-left {
   position: absolute;
   left: -40px;
@@ -179,7 +169,6 @@ main, section, header, footer, div {
   pointer-events: none;
   z-index: 1;
 }
-
 .hero-deco-grains {
   position: absolute;
   left: 360px;
@@ -191,7 +180,7 @@ main, section, header, footer, div {
   z-index: 2;
 }
 
-/* Hero image — absolutely positioned, bleeds to right viewport edge */
+/* Photo bleeds to right viewport edge, fades in from left */
 .hero-media {
   position: absolute;
   top: 0;
@@ -199,8 +188,6 @@ main, section, header, footer, div {
   width: 55%;
   height: 100%;
   overflow: hidden;
-  border-radius: 0;
-  box-shadow: none;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%);
   mask-image: linear-gradient(to right, transparent 0%, black 15%);
   z-index: 1;
@@ -213,19 +200,12 @@ main, section, header, footer, div {
 
 .hero-text-col {
   position: relative;
-  z-index: 3;
+  z-index: 4;          /* must sit above wave-divider (z-index 3) */
   max-width: 560px;
-  padding: 60px 0;
+  padding: 60px 0 130px; /* bottom clearance for the 90px wave */
 }
-
-.hero-text-col h1 {
-  font-size: 3.25rem;
-  line-height: 1.12;
-}
-
-.hero-text-col p {
-  font-size: 1.125rem;
-}
+.hero-text-col h1 { font-size: 3.25rem; line-height: 1.12; }
+.hero-text-col p  { font-size: 1.125rem; }
 
 .wave-divider {
   position: absolute;
@@ -234,9 +214,10 @@ main, section, header, footer, div {
   width: 100%;
   height: 90px;
   z-index: 3;
+  pointer-events: none; /* must not block clicks on the button above */
 }
 
-/* ---------- Journey section ---------- */
+/* ---------- Journey ---------- */
 .journey-section {
   position: relative;
   overflow: hidden;
@@ -244,7 +225,6 @@ main, section, header, footer, div {
   padding-bottom: 100px;
 }
 
-/* Barn drawing — aligned with container left padding */
 .journey-bg-illustration {
   position: absolute;
   left: 5%;
@@ -257,15 +237,15 @@ main, section, header, footer, div {
   z-index: 0;
 }
 
-/* Step number track */
-.step-track {
+/* Each step-item contains its number + card as one unit */
+.steps-grid {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 24px;
-  margin-bottom: 22px;
 }
-.step-track::before {
+/* Dashed connecting line between numbers */
+.steps-grid::before {
   content: "";
   position: absolute;
   top: 20px;
@@ -277,7 +257,13 @@ main, section, header, footer, div {
   background-repeat: repeat-x;
   z-index: 0;
 }
-.step-num {
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.step-item .step-num {
   position: relative;
   z-index: 1;
   width: 40px;
@@ -290,15 +276,15 @@ main, section, header, footer, div {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  margin-bottom: 16px;
+  flex-shrink: 0;
 }
 
-/* Step cards — transparent card, tall elegant arch image */
 .step-card {
   position: relative;
   background: transparent;
-  border-radius: 0;
   overflow: visible;
+  width: 100%;
 }
 .step-card .step-img-wrap {
   position: relative;
@@ -331,15 +317,10 @@ main, section, header, footer, div {
   padding: 38px 8px 12px;
   text-align: center;
 }
-.step-card .step-body h3 {
-  font-size: 1.25rem;
-}
-.step-card .step-body p {
-  font-size: 0.95rem;
-  line-height: 1.55;
-}
+.step-card .step-body h3 { font-size: 1.25rem; }
+.step-card .step-body p  { font-size: 0.95rem; line-height: 1.55; }
 
-/* ---------- Promise / quality section ---------- */
+/* ---------- Promise / Quality ---------- */
 .promise-section {
   position: relative;
   background: linear-gradient(120deg, var(--tan-deep) 0%, var(--tan) 45%, var(--cream) 100%);
@@ -348,7 +329,7 @@ main, section, header, footer, div {
   padding-bottom: 100px;
 }
 
-/* Bleeds off the far left edge with increased height and organic curve */
+/* Image bleeds off the left edge with an organic curved border */
 .promise-media {
   position: relative;
   margin-left: calc(-1 * (100vw - 100%) / 2);
@@ -360,7 +341,6 @@ main, section, header, footer, div {
 }
 .promise-media img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Decorative wheat illustration on the right side of promise section */
 .promise-deco {
   position: absolute;
   right: -20px;
@@ -372,26 +352,15 @@ main, section, header, footer, div {
   z-index: 0;
 }
 
-.promise-content {
-  padding-left: 20px;
-}
-
-.promise-content h2 {
-  font-size: 2.75rem;
-  line-height: 1.2;
-}
-
-.promise-content p.intro {
-  font-size: 1.15rem;
-  margin-bottom: 2rem;
-}
+.promise-content { padding-left: 20px; }
+.promise-content h2 { font-size: 2.75rem; line-height: 1.2; }
+.promise-content p.intro { font-size: 1.15rem; margin-bottom: 2rem; }
 
 .promise-points-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-
 .promise-point { display: flex; align-items: center; gap: 18px; }
 .promise-icon {
   flex: 0 0 auto;
@@ -407,7 +376,7 @@ main, section, header, footer, div {
 .promise-icon i { color: #fff; font-size: 22px; }
 .promise-point p { font-weight: 600; color: var(--ink); font-size: 1.05rem; line-height: 1.4; margin: 0; }
 
-/* ---------- About Us Page — Left-Bleed Hero (mirrors index.html hero, flipped) ---------- */
+/* ---------- About Us hero (mirrors index hero, image on left) ---------- */
 .about-hero-section {
   position: relative;
   background: var(--cream);
@@ -419,7 +388,7 @@ main, section, header, footer, div {
   overflow: hidden;
 }
 
-/* Image bleeds off the LEFT edge — absolutely positioned */
+/* Photo bleeds off the left edge, fades to the right */
 .about-hero-media {
   position: absolute;
   top: 0;
@@ -427,7 +396,6 @@ main, section, header, footer, div {
   width: 55%;
   height: 100%;
   overflow: hidden;
-  /* Gradient mask: fades from visible on the left to transparent on the right */
   -webkit-mask-image: linear-gradient(to left, transparent 0%, black 18%);
   mask-image: linear-gradient(to left, transparent 0%, black 18%);
   z-index: 1;
@@ -439,24 +407,16 @@ main, section, header, footer, div {
   object-position: center center;
 }
 
-/* Text column sits on the RIGHT, mirroring hero-text-col */
 .about-text-col {
   position: relative;
   z-index: 3;
   max-width: 560px;
   margin-left: auto;
-  margin-right: 8%;   /* pull inward so text centres in the right half */
+  margin-right: 8%;
   padding: 60px 0;
 }
-
-.about-text-col h1 {
-  font-size: 3.25rem;
-  line-height: 1.12;
-}
-
-.about-text-col p {
-  font-size: 1.125rem;
-}
+.about-text-col h1 { font-size: 3.25rem; line-height: 1.12; }
+.about-text-col p  { font-size: 1.125rem; }
 
 /* ---------- FAQ accordion ---------- */
 .faq-item {
@@ -492,7 +452,7 @@ main, section, header, footer, div {
 }
 .faq-item .faq-panel { padding: 0 26px 22px; color: var(--ink-soft); font-size: 1rem; line-height: 1.65; }
 
-/* ---------- FAQ + Find us wrapper ---------- */
+/* ---------- FAQ + Find us ---------- */
 .faq-find-section {
   position: relative;
   overflow: hidden;
@@ -509,8 +469,19 @@ main, section, header, footer, div {
   pointer-events: none;
   z-index: 0;
 }
+.faq-windmill {
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  width: 155px;
+  height: auto;
+  opacity: 0.55;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
 
-/* ---------- Find us / spudshed card ---------- */
+/* ---------- Find us / Spudshed card ---------- */
 .find-card {
   position: relative;
   background: var(--tan);
@@ -542,7 +513,7 @@ main, section, header, footer, div {
   max-width: 55%;
 }
 
-/* ---------- Contact section ---------- */
+/* ---------- Contact ---------- */
 .contact-section {
   position: relative;
   background: linear-gradient(180deg, var(--tan) 0%, var(--cream-alt) 100%);
@@ -562,7 +533,6 @@ main, section, header, footer, div {
 .contact-input::placeholder { color: #9c8f7f; }
 .contact-input:focus { border-color: var(--orange); }
 
-/* Contact drawing — placed inside left text column under text */
 .contact-deco-inline {
   width: 340px;
   max-width: 100%;
@@ -570,28 +540,28 @@ main, section, header, footer, div {
   opacity: .75;
   margin-top: 24px;
   pointer-events: none;
-  mix-blend-mode: multiply !important;
+  mix-blend-mode: multiply;
 }
 
-/* ---------- Footer (dark theme — matches logo's brown) ---------- */
-.site-footer { 
+/* ---------- Footer ---------- */
+.site-footer {
   background: #2E1A0E;
-  color: rgba(251,247,241,0.85); 
-  position: relative; 
-  overflow: hidden; 
+  color: rgba(251,247,241,0.85);
+  position: relative;
+  overflow: hidden;
 }
 .site-footer h3 { color: #FBF7F1; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 17px; }
 .site-footer a, .site-footer p { color: rgba(251,247,241,0.65); font-size: 15px; }
 .site-footer a:hover { color: var(--orange); }
 .site-footer i { color: rgba(251,247,241,0.5); }
 
-/* Cream badge around logo so multiply blends against cream, not the dark bg */
+/* Logo badge in footer — cream bg so multiply blend works against it, not the dark bg */
 .footer-logo-wrap {
   display: inline-block;
   background: var(--cream);
   border-radius: 12px;
   padding: 10px 14px;
-  isolation: isolate;  /* own stacking context so multiply works against cream */
+  isolation: isolate;
 }
 .footer-logo-img {
   height: 52px;
@@ -599,53 +569,51 @@ main, section, header, footer, div {
   mix-blend-mode: multiply;
 }
 
-/* Windmill as a subtle light watermark via screen blend on dark bg */
-.footer-windmill {
-  position: absolute;
-  right: 40px;
-  bottom: 20px;
-  width: 220px;
-  height: auto;
-  opacity: .18;
-  pointer-events: none;
-  mix-blend-mode: screen;
-}
 .footer-bottom { background: rgba(0,0,0,0.2); }
 .footer-bottom p { color: rgba(251,247,241,0.45) !important; }
 
 /* ---------- Utility ---------- */
-.text-ink { color: var(--ink); }
-.text-ink-soft { color: var(--ink-soft); }
-.bg-cream { background: var(--cream); }
+.text-ink     { color: var(--ink); }
+.text-ink-soft{ color: var(--ink-soft); }
+.bg-cream     { background: var(--cream); }
 .bg-cream-alt { background: var(--cream-alt); }
-.bg-tan { background: var(--tan); }
-.bg-card { background: var(--card); }
+.bg-tan       { background: var(--tan); }
+.bg-card      { background: var(--card); }
 
-/* ---------- Responsive ---------- */
+/* ---------- Responsive (≤ 900px) ---------- */
 @media (max-width: 900px) {
   .hero {
     min-height: auto;
-    padding-top: 30px;
+    padding-top: 0;
     padding-bottom: 0;
+    flex-direction: column;
   }
   .hero-media {
     position: relative !important;
     width: 100% !important;
     height: 320px !important;
-    margin-top: 32px;
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
+    order: -1;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%) !important;
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%) !important;
   }
   .hero-text-col {
     max-width: 100%;
-    padding: 20px 0;
+    padding: 24px 0 100px;
   }
   .hero-deco-left, .hero-deco-grains { display: none; }
+
   .journey-grid { grid-template-columns: 1fr !important; }
-  .journey-bg-illustration { left: 0; width: 100%; max-width: 100%; }
-  .step-track { grid-template-columns: repeat(2, 1fr) !important; row-gap: 46px; margin-top: 24px; }
-  .step-track::before { display: none; }
-  .step-cards { grid-template-columns: repeat(2, 1fr) !important; }
+  .journey-bg-illustration {
+    opacity: 0.45 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 90% !important;
+    max-width: none !important;
+    bottom: 0 !important;
+  }
+  .steps-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .steps-grid::before { display: none; }
+
   .promise-grid { grid-template-columns: 1fr !important; }
   .promise-media {
     margin-left: 0 !important;
@@ -654,29 +622,40 @@ main, section, header, footer, div {
     border-radius: 16px !important;
   }
   .promise-content { padding-left: 0 !important; }
+  .promise-deco { display: none; }
+
+  .about-hero-section {
+    min-height: auto;
+    padding-top: 0;
+    flex-direction: column;
+  }
   .about-hero-media {
     position: relative !important;
     width: 100% !important;
     height: 320px !important;
-    margin-bottom: 32px;
-    -webkit-mask-image: none !important;
-    mask-image: none !important;
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%) !important;
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%) !important;
   }
-  .about-hero-section {
-    min-height: auto;
-    padding-top: 30px;
-    flex-direction: column;
-    align-items: flex-start;
+  .about-text-col {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: 100% !important;
+    padding: 24px 0;
   }
-  .about-text-col { margin-left: 0 !important; max-width: 100% !important; padding: 20px 0; }
+
   .faq-find-grid { grid-template-columns: 1fr !important; }
   .find-card { margin-top: 24px; }
   .find-card-content { max-width: 100% !important; }
   .find-card .find-photo { display: none; }
-  .contact-grid { grid-template-columns: 1fr !important; }
-  .about-grid { grid-template-columns: 1fr !important; }
-  .footer-windmill { display: none; }
   .faq-deco-wheat { display: none; }
+  .faq-windmill { display: none; }
+
+  .contact-grid { grid-template-columns: 1fr !important; }
   .contact-deco-inline { width: 240px; }
-  .promise-deco { display: none; }
+
+  .about-grid { grid-template-columns: 1fr !important; }
+
+  #mobile-menu { background: #2E1A0E !important; }
+  #mobile-menu .nav-link { color: rgba(251,247,241,0.8); font-size: 1.5rem; }
+  #mobile-menu .nav-link.active { color: var(--orange); }
 }

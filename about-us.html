@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Kesari by Karta Farms — our story, our heritage, and why we grow and stone-mill wheat the traditional way in Western Australia.">
     <title>About Us - Kesari</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
@@ -33,12 +34,10 @@
 </head>
 
 <body>
-    <!-- Header -->
     <header class="site-header sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="logo-mark">
-                <img src="assets/Logo.png"  
-                    alt="Kesari Logo" class="h-12 blend-illustration">
+                <img src="assets/Logo.png" alt="Kesari Logo" class="h-12">
             </a>
             <nav class="hidden md:flex space-x-12">
                 <a href="index.html" class="nav-link">Home</a>
@@ -46,14 +45,14 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center">
-                <i class="ri-menu-line ri-2xl text-secondary"></i>
+                <i class="ri-menu-line ri-2xl" style="color: rgba(251,247,241,0.85);"></i>
             </button>
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="fixed inset-0 bg-cream z-50 hidden">
+
+            <div id="mobile-menu" class="fixed inset-0 z-50 hidden">
                 <div class="container mx-auto py-5">
                     <div class="flex justify-end">
                         <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center">
-                            <i class="ri-close-line ri-2xl text-secondary"></i>
+                            <i class="ri-close-line ri-2xl" style="color: rgba(251,247,241,0.85);"></i>
                         </button>
                     </div>
                     <nav class="flex flex-col items-center space-y-8 mt-20">
@@ -67,13 +66,10 @@
     </header>
 
     <main>
-        <!-- About Hero — image bleeds off the LEFT, text sits on the RIGHT (mirrors index hero, flipped) -->
         <section class="about-hero-section">
-            <!-- Hero image absolutely positioned, bleeds to left -->
             <div class="about-hero-media">
-                <img src="assets/sunset-golden-field-grass.jpg" alt="Golden wheat fields at Kesari farm">
+                <img src="assets/sunset-golden-field-grass.jpg" alt="Golden wheat fields at Kesari farm" style="object-position: 70% center;">
             </div>
-
             <div class="container mx-auto relative z-10">
                 <div class="about-text-col">
                     <div class="eyebrow"><span>Our Story</span></div>
@@ -83,14 +79,11 @@
                     <a href="#contact" class="btn-orange">Get in Touch <i class="ri-arrow-right-line"></i></a>
                 </div>
             </div>
-
-            <!-- Wave divider at the bottom, same as index hero -->
             <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none">
                 <path d="M0,60 C240,110 420,10 720,45 C1020,80 1240,15 1440,55 L1440,100 L0,100 Z" fill="var(--tan)"/>
             </svg>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="contact-section">
             <div class="container mx-auto">
                 <div class="grid gap-14 contact-grid" style="grid-template-columns: 0.85fr 1.15fr; align-items: start;">
@@ -98,8 +91,6 @@
                         <div class="eyebrow"><span>Get in Touch</span><span class="eyebrow-rule"></span></div>
                         <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6" style="line-height:1.2">We'd love to hear from you.</h2>
                         <p class="text-ink-soft text-lg">Have questions about our products or want to learn more about our traditional milling process? Send us a message and we'll get back to you as soon as possible.</p>
-                        
-                        <!-- Contact drawing positioned directly under text with blend mode -->
                         <img src="assets/contact-drawing.PNG" class="contact-deco-inline blend-illustration" alt="Wheat decoration">
                     </div>
 
@@ -118,13 +109,12 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer pt-20 pb-0">
         <div class="container mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14 relative z-10" style="background: var(--footer-bg);">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
                 <div>
-                    <a href="index.html" class="inline-block mb-4">
-                        <img src="assets/Logo.png" alt="Kesari Logo" class="footer-logo-img blend-illustration">
+                    <a href="index.html" class="footer-logo-wrap mb-4">
+                        <img src="assets/Logo.png" alt="Kesari Logo" class="footer-logo-img">
                     </a>
                     <p class="text-base mt-4 max-w-[240px]">From our farm to your table.<br>Thank you for supporting our journey.</p>
                 </div>
@@ -139,7 +129,7 @@
                 <div>
                     <h3 class="mb-5">Connect</h3>
                     <ul class="space-y-4 text-base">
-                        <li class="flex items-center gap-3"><i class="ri-facebook-fill text-lg"></i><a href="https://www.facebook.com/Kartafarm/" target="_blank" rel="noopener">/Kartafarm</a></li>
+                        <li class="flex items-center gap-3"><i class="ri-facebook-fill text-lg"></i><a href="https://www.facebook.com/Kartafarm/" target="_blank" rel="noopener">Kartafarms</a></li>
                         <li class="flex items-center gap-3"><i class="ri-instagram-line text-lg"></i><a href="https://www.instagram.com/kartafarms/" target="_blank" rel="noopener">@kartafarms</a></li>
                         <li class="flex items-center gap-3"><i class="ri-mail-line text-lg"></i><a href="mailto:kartafarms@gmail.com">kartafarms@gmail.com</a></li>
                     </ul>
@@ -147,28 +137,20 @@
             </div>
         </div>
         <div class="footer-bottom py-5 mt-4">
-            <p class="text-center text-base text-ink-soft">&copy; 2025 Kesari. All rights reserved.</p>
+            <p class="text-center text-base">&copy; 2025 Kesari. All rights reserved.</p>
         </div>
-        <img src="assets/windmill-drawing.PNG" class="footer-windmill blend-illustration" alt="Windmill">
     </footer>
 
-    <!-- Scripts -->
-    <script id="mobile-menu-toggle">
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.getElementById('mobile-menu-button');
-            const closeButton = document.getElementById('mobile-menu-close');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
             const mobileMenu = document.getElementById('mobile-menu');
-
             function toggleMenu() {
                 mobileMenu.classList.toggle('hidden');
                 document.body.classList.toggle('overflow-hidden');
             }
-
-            menuButton.addEventListener('click', toggleMenu);
-            closeButton.addEventListener('click', toggleMenu);
-
-            const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
-            Array.from(mobileMenuLinks).forEach(link => {
+            document.getElementById('mobile-menu-button').addEventListener('click', toggleMenu);
+            document.getElementById('mobile-menu-close').addEventListener('click', toggleMenu);
+            Array.from(mobileMenu.getElementsByTagName('a')).forEach(link => {
                 link.addEventListener('click', toggleMenu);
             });
         });

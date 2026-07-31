@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kesari by Karta Farms — premium stone-ground wheat flour and daliya, grown and milled in Western Australia. Farm to table, pure and natural.">
     <title>Kesari - Premium Wheat Products</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
     <script>
@@ -33,12 +34,10 @@
 </head>
 
 <body>
-    <!-- Header -->
     <header class="site-header sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <a href="index.html" class="logo-mark">
-                <img src="assets/Logo.png" 
-                    alt="Kesari Logo" class="h-12">
+                <img src="assets/Logo.png" alt="Kesari Logo" class="h-12">
             </a>
             <nav class="hidden md:flex space-x-12">
                 <a href="index.html" class="nav-link active">Home</a>
@@ -46,15 +45,14 @@
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center">
-                <i class="ri-menu-line ri-2xl text-secondary"></i>
+                <i class="ri-menu-line ri-2xl" style="color: rgba(251,247,241,0.85);"></i>
             </button>
 
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="fixed inset-0 bg-cream z-50 hidden">
+            <div id="mobile-menu" class="fixed inset-0 z-50 hidden">
                 <div class="container mx-auto py-5">
                     <div class="flex justify-end">
                         <button id="mobile-menu-close" class="w-10 h-10 flex items-center justify-center">
-                            <i class="ri-close-line ri-2xl text-secondary"></i>
+                            <i class="ri-close-line ri-2xl" style="color: rgba(251,247,241,0.85);"></i>
                         </button>
                     </div>
                     <nav class="flex flex-col items-center space-y-8 mt-20">
@@ -68,17 +66,12 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero">
-            <!-- Decorative drawings in Hero section -->
             <img src="assets/wheat-drawing.PNG" class="hero-deco-left blend-illustration" alt="">
             <img src="assets/decorative-wheat-2.PNG" class="hero-deco-grains blend-illustration" alt="">
-
-            <!-- Hero image — absolutely positioned, bleeds to right -->
             <div class="hero-media">
                 <img src="assets/golden-wheat-field-warm-sunlight.jpg" alt="Golden wheat field at sunset">
             </div>
-
             <div class="container mx-auto relative z-10">
                 <div class="hero-text-col">
                     <div class="eyebrow"><span>Pure. Natural. Authentic.</span></div>
@@ -87,15 +80,12 @@
                     <a href="about-us.html" class="btn-orange">Our Story <i class="ri-arrow-right-line"></i></a>
                 </div>
             </div>
-
             <svg class="wave-divider" viewBox="0 0 1440 100" preserveAspectRatio="none">
                 <path d="M0,60 C240,110 420,10 720,45 C1020,80 1240,15 1440,55 L1440,100 L0,100 Z" fill="#ffffff"/>
             </svg>
         </section>
 
-        <!-- Journey Section -->
         <section id="journey" class="journey-section" style="background: #ffffff;">
-            <!-- Barn drawing aligned with container left padding -->
             <img src="assets/barn-drawing.PNG" class="journey-bg-illustration blend-illustration" alt="">
             <div class="container mx-auto relative z-10">
                 <div class="grid gap-12 journey-grid" style="grid-template-columns: 0.85fr 2fr;">
@@ -105,15 +95,9 @@
                         <p class="text-ink-soft text-lg max-w-sm">Every grain tells a story that begins in our soil and ends at your table. Follow the journey of how we transform seeds into the finest flour.</p>
                     </div>
 
-                    <div>
-                        <div class="step-track">
+                    <div class="steps-grid">
+                        <div class="step-item">
                             <div class="step-num">01</div>
-                            <div class="step-num">02</div>
-                            <div class="step-num">03</div>
-                            <div class="step-num">04</div>
-                        </div>
-                        <div class="grid gap-6 step-cards" style="grid-template-columns: repeat(4, 1fr);">
-                            <!-- Step 1 -->
                             <div class="step-card">
                                 <div class="step-img-wrap">
                                     <img src="assets/seeds-in-soil.PNG" alt="Planting seeds">
@@ -124,7 +108,9 @@
                                     <p class="text-ink-soft">We begin by selecting and planting the finest wheat seeds in our nutrient-rich soil.</p>
                                 </div>
                             </div>
-                            <!-- Step 2 -->
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">02</div>
                             <div class="step-card">
                                 <div class="step-img-wrap">
                                     <img src="assets/green-wheat.PNG" alt="Growing wheat">
@@ -135,7 +121,9 @@
                                     <p class="text-ink-soft">Over months, we nurture our wheat as it grows strong and tall in our sustainable fields.</p>
                                 </div>
                             </div>
-                            <!-- Step 3 -->
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">03</div>
                             <div class="step-card">
                                 <div class="step-img-wrap">
                                     <img src="assets/wheat-yellow.PNG" alt="Harvesting wheat">
@@ -146,7 +134,9 @@
                                     <p class="text-ink-soft">At peak ripeness, we harvest our golden wheat, gathering the fruits of our patient care.</p>
                                 </div>
                             </div>
-                            <!-- Step 4 -->
+                        </div>
+                        <div class="step-item">
+                            <div class="step-num">04</div>
                             <div class="step-card">
                                 <div class="step-img-wrap">
                                     <img src="assets/wheat-milling.PNG" alt="Milling wheat">
@@ -163,9 +153,7 @@
             </div>
         </section>
 
-        <!-- Quality / Promise Section -->
         <section class="promise-section">
-            <!-- Decorative wheat illustration on the right -->
             <img src="assets/decorative-wheat-2.PNG" class="promise-deco blend-illustration" alt="">
             <div class="container mx-auto relative z-10">
                 <div class="grid gap-12 promise-grid" style="grid-template-columns: 1.05fr 1.15fr; align-items: center;">
@@ -176,7 +164,6 @@
                         <div class="eyebrow"><span>Our Promise</span><span class="eyebrow-rule"></span></div>
                         <h2 class="font-serif font-bold mb-6">Quality is not just our promise, it's our heritage.</h2>
                         <p class="text-ink-soft intro">At Kesari, quality is not just a promise, it's our heritage. Every bag of flour we produce meets the highest standards of purity and nutrition.</p>
-                        
                         <div class="promise-points-list">
                             <div class="promise-point">
                                 <div class="promise-icon"><i class="ri-leaf-line"></i></div>
@@ -196,10 +183,9 @@
             </div>
         </section>
 
-        <!-- FAQ + Find Us Section -->
         <section class="faq-find-section" style="background: #ffffff;">
-            <!-- Decorative wheat drawing on the left (raised higher above Contact section) -->
             <img src="assets/decorative-wheat.PNG" class="faq-deco-wheat blend-illustration" alt="">
+            <img src="assets/windmill-drawing.PNG" class="faq-windmill" alt="">
             <div class="container mx-auto relative z-10">
                 <div class="grid gap-12 faq-find-grid" style="grid-template-columns: 1fr 1fr;">
                     <div>
@@ -249,7 +235,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="contact-section">
             <div class="container mx-auto">
                 <div class="grid gap-14 contact-grid" style="grid-template-columns: 0.85fr 1.15fr; align-items: start;">
@@ -257,8 +242,6 @@
                         <div class="eyebrow"><span>Get in Touch</span><span class="eyebrow-rule"></span></div>
                         <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6" style="line-height:1.2">We'd love to hear from you.</h2>
                         <p class="text-ink-soft text-lg">Have questions about our products or want to learn more about our traditional milling process? Send us a message and we'll get back to you as soon as possible.</p>
-                        
-                        <!-- Contact drawing positioned directly under text with blend mode -->
                         <img src="assets/contact-drawing.PNG" class="contact-deco-inline blend-illustration" alt="Wheat decoration">
                     </div>
 
@@ -277,7 +260,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="site-footer pt-20 pb-0">
         <div class="container mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-14">
@@ -298,7 +280,7 @@
                 <div>
                     <h3 class="mb-5">Connect</h3>
                     <ul class="space-y-4 text-base">
-                        <li class="flex items-center gap-3"><i class="ri-facebook-fill text-lg"></i><a href="https://www.facebook.com/Kartafarm/" target="_blank" rel="noopener">Kartafarm</a></li>
+                        <li class="flex items-center gap-3"><i class="ri-facebook-fill text-lg"></i><a href="https://www.facebook.com/Kartafarm/" target="_blank" rel="noopener">Kartafarms</a></li>
                         <li class="flex items-center gap-3"><i class="ri-instagram-line text-lg"></i><a href="https://www.instagram.com/kartafarms/" target="_blank" rel="noopener">@kartafarms</a></li>
                         <li class="flex items-center gap-3"><i class="ri-mail-line text-lg"></i><a href="mailto:kartafarms@gmail.com">kartafarms@gmail.com</a></li>
                     </ul>
@@ -306,49 +288,34 @@
             </div>
         </div>
         <div class="footer-bottom py-5 mt-4">
-            <p class="text-center text-base text-ink-soft">&copy; 2025 Kesari. All rights reserved.</p>
+            <p class="text-center text-base">&copy; 2025 Kesari. All rights reserved.</p>
         </div>
-        <img src="assets/windmill-drawing.PNG" class="footer-windmill blend-illustration" alt="Windmill">
     </footer>
 
-    <!-- Scripts -->
-    <script id="faq-accordion">
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const faqButtons = document.querySelectorAll('[id^="faq-btn-"]');
-            faqButtons.forEach(button => {
+            // FAQ accordion
+            document.querySelectorAll('[id^="faq-btn-"]').forEach(button => {
                 button.addEventListener('click', function () {
                     const id = this.id.split('-')[2];
                     const content = document.getElementById(`faq-content-${id}`);
                     const icon = document.getElementById(`faq-icon-${id}`);
-                    if (content.classList.contains('hidden')) {
-                        content.classList.remove('hidden');
-                        icon.classList.remove('ri-add-line');
-                        icon.classList.add('ri-subtract-line');
-                    } else {
-                        content.classList.add('hidden');
-                        icon.classList.remove('ri-subtract-line');
-                        icon.classList.add('ri-add-line');
-                    }
+                    const isOpen = !content.classList.contains('hidden');
+                    content.classList.toggle('hidden', isOpen);
+                    icon.classList.toggle('ri-add-line', isOpen);
+                    icon.classList.toggle('ri-subtract-line', !isOpen);
                 });
             });
-        });
-    </script>
-    <script id="mobile-menu-toggle">
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.getElementById('mobile-menu-button');
-            const closeButton = document.getElementById('mobile-menu-close');
-            const mobileMenu = document.getElementById('mobile-menu');
 
+            // Mobile nav
+            const mobileMenu = document.getElementById('mobile-menu');
             function toggleMenu() {
                 mobileMenu.classList.toggle('hidden');
                 document.body.classList.toggle('overflow-hidden');
             }
-
-            menuButton.addEventListener('click', toggleMenu);
-            closeButton.addEventListener('click', toggleMenu);
-
-            const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
-            Array.from(mobileMenuLinks).forEach(link => {
+            document.getElementById('mobile-menu-button').addEventListener('click', toggleMenu);
+            document.getElementById('mobile-menu-close').addEventListener('click', toggleMenu);
+            Array.from(mobileMenu.getElementsByTagName('a')).forEach(link => {
                 link.addEventListener('click', toggleMenu);
             });
         });
